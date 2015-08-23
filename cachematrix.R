@@ -1,10 +1,20 @@
-## Put comments here that give an overall description of what your
-## functions do
+## This function 'makeCacheMatrix' creates a matrix
+## It also contains functions to be used in other function
 
-## Write a short comment describing this function
+## Creates Matrix object, im, is the inverse matrix
 
 makeCacheMatrix <- function(x = matrix()) {
-
+	im <-NULL
+	set <-function(y){
+		x<<-y
+		im<<-NULL
+	}
+	get<-function()x
+	setinverse<-function(inverse) im<<-inverse
+	getinverse<-function() im
+	list(set = set, get = get, 
+		setinverse = setinverse,
+		getinverse = getinverse)
 }
 
 
